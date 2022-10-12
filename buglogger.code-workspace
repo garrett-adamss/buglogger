@@ -55,6 +55,9 @@
       "titleBar.inactiveBackground": "#b7301099",
       "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#b73010"
+    "peacock.color": "#b73010",
+    "cSpell.words": [
+      "buglogger"
+    ]
   }
 }
