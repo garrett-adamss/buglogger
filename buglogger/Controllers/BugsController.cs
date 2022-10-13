@@ -3,6 +3,7 @@ using System.Collections.Generic;
 // using CodeWorks.Auth0Provider;
 using buglogger.Models;
 using buglogger.Services;
+using Microsoft.AspNetCore.Authorization;
 // using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,21 @@ namespace buglogger.Controllers
                 // Account user = await HttpContext.GetUserInfoAsync<Account>();
                 Bug bug = _bugsService.GetOne(id);
                 return Ok(bug);
+            }
+            catch (Exception e)
+            {
+               return BadRequest(e.Message);
+            }
+        }
+        [HttpDelete("{id}")]
+        [Authorize]
+        public ActionResult<string> Delete(int id)
+        {
+            try 
+            {
+            //   Account user = await HttpContext.GetHashCode<Account>();
+                string message = _bugsService.Delete(id );
+                return Ok(message);
             }
             catch (Exception e)
             {

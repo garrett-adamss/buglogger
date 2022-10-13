@@ -28,5 +28,10 @@ namespace buglogger.Services
             }
             return bug;
         }
+
+        internal string Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
