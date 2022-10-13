@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+// using CodeWorks.Auth0Provider;
 using buglogger.Models;
 using buglogger.Services;
+// using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace buglogger.Controllers
@@ -24,6 +26,21 @@ namespace buglogger.Controllers
             {
               List<Bug> bugs = _bugsService.GetAll();
               return Ok(bugs);
+            }
+            catch (Exception e)
+            {
+               return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Bug> GetOne(int id)
+        {
+            try 
+            {
+                // Account user = await HttpContext.GetUserInfoAsync<Account>();
+                Bug bug = _bugsService.GetOne(id);
+                return Ok(bug);
             }
             catch (Exception e)
             {

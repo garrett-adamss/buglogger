@@ -31,5 +31,22 @@ namespace buglogger.Repositories
                 return bug;
             }).ToList();
         }
+
+        internal Bug GetOne(int bugId)
+        {
+            string sql = @"
+                SELECT
+                b.*,
+                a.*
+                FROM bugs b
+                JOIN accounts a ON b.creatorId = a.id
+                WHERE b.id = @id
+            ";
+            return _db.Query<Bug, Profile, Bug>(sql, (bug, profile)=>
+            {
+                bug.Creator = profile;
+                return bug;
+            }, new { bugId }).FirstOrDefault();
+        }
     }
 }
