@@ -9,9 +9,7 @@
     </button>
 
     <div class="my-2 my-lg-0" v-else>
-      <router-link :to="{ name: 'Account' }">
         <i class="settings mdi mdi-cog-outline" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
-      </router-link>
     </div>
   </span>
 </template>
