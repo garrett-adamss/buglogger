@@ -4,6 +4,7 @@
   </header>
   <main>
     <router-view />
+    <SettingsOffCanvas/>
   </main>
   <footer>
     <div class="text-center p-4">

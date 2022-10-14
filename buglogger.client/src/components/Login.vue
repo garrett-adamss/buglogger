@@ -10,10 +10,9 @@
 
     <div class="my-2 my-lg-0" v-else>
       <router-link :to="{ name: 'Account' }">
-        <i class="settings mdi mdi-cog-outline"></i>
+        <i class="settings mdi mdi-cog-outline" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
       </router-link>
     </div>
-    
   </span>
 </template>
 
@@ -21,19 +20,21 @@
 import { computed } from 'vue'
 import { AppState } from '../AppState'
 import { AuthService } from '../services/AuthService'
+import SettingsOffCanvas from './SettingsOffCanvas.vue'
 export default {
-  setup() {
-    return {
-      user: computed(() => AppState.user),
-      account: computed(() => AppState.account),
-      async login() {
-        AuthService.loginWithPopup()
-      },
-      async logout() {
-        AuthService.logout({ returnTo: window.location.origin })
-      }
-    }
-  }
+    setup() {
+        return {
+            user: computed(() => AppState.user),
+            account: computed(() => AppState.account),
+            async login() {
+                AuthService.loginWithPopup();
+            },
+            async logout() {
+                AuthService.logout({ returnTo: window.location.origin });
+            }
+        };
+    },
+    components: { SettingsOffCanvas }
 }
 </script>
 
