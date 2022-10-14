@@ -6,11 +6,11 @@ function loadPage(page) {
 }
 
 const routes = [
-  {
-    path: '/',
-    name: 'Login',
-    component: loadPage('LoginPage')
-  },
+  // {
+  //   path: '/',
+  //   name: 'Login',
+  //   component: loadPage('LoginPage')
+  // },
   {
     path: '/',
     name: 'Home',
