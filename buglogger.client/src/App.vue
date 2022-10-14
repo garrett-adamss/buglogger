@@ -6,8 +6,11 @@
     <router-view />
   </main>
   <footer>
-    <div class="bg-dark text-light text-center p-4">
-      Made with 💖 by CodeWorks
+    <div class="text-center p-4">
+      Made by garrett-adamss 
+    <a class="footer-source" href="https://github.com/garrett-adamss/portfolioLandingPage">
+        &lt;source code/&gt;
+    </a>
     </div>
   </footer>
 </template>
@@ -28,4 +31,21 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+footer a {
+    transition: transform 250ms;
+  }
+
+  footer a:hover {
+    background-color: #555;
+    color: white;
+    transform: translateY(-10px);
+  }
 </style>
