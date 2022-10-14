@@ -8,35 +8,12 @@
       Login
     </button>
 
-    <div class="dropdown my-2 my-lg-0" v-else>
-      <div
-        class="dropdown-toggle selectable"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        id="authDropdown"
-      >
-        <div v-if="account.picture || user.picture">
-          <img
-            :src="account.picture || user.picture"
-            alt="account photo"
-            height="40"
-            class="rounded"
-          />
-          <span class="mx-3 lighten-30">{{ account.name || user.name }}</span>
-        </div>
-      </div>
-      <div class="dropdown-menu p-0 list-group w-100" aria-labelledby="authDropdown">
-        <router-link :to="{ name: 'Account' }">
-          <div class="list-group-item list-group-item-action hoverable">
-            Account
-          </div>
-        </router-link>
-        <div class="list-group-item list-group-item-action hoverable text-danger" @click="logout">
-          <i class="mdi mdi-logout"></i>
-          logout
-        </div>
-      </div>
+    <div class="my-2 my-lg-0" v-else>
+      <router-link :to="{ name: 'Account' }">
+        <i class="settings mdi mdi-cog-outline"></i>
+      </router-link>
     </div>
+    
   </span>
 </template>
 
@@ -61,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.settings{
+  font-size: 25px;
+}
 .dropdown-menu {
   user-select: none;
   display: block;
