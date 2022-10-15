@@ -26,7 +26,17 @@ const routes = [
     name: 'Account',
     component: loadPage('AccountPage'),
     beforeEnter: authGuard
-  }
+  },
+  {
+    path: '/',
+    name: 'BugPage',
+    component: loadPage('BugPage')
+  },
+  {
+    path: '/',
+    name: 'ProjectPage',
+    component: loadPage('ProjectPage')
+  },
 ]
 
 export const router = createRouter({

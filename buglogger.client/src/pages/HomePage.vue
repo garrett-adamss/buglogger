@@ -3,8 +3,8 @@
   </div>
   <div class="d-flex row align-items-center title">
     <div class="col-1 ms-3"><p class="subtitle user-select-none">Priority</p></div>
-    <div class="col-2 offset-1 selectable"><p class="subtitle ">Project</p></div>
-    <div class="col-2 selectable"><p class="subtitle">Bug</p></div>
+    <div class="col-2 offset-1 selectable" @click="toProject()"><p class="subtitle">Project</p></div>
+    <div class="col-2 selectable" @click="toBug()"><p class="subtitle">Bug</p></div>
     <div class="col-4"><p class="subtitle user-select-none">Description</p></div>
     <div class="col-1"><p class="subtitle user-select-none">Status</p></div>
   </div>
@@ -14,9 +14,31 @@
 
 <script>
 import Bug from '../components/Bug.vue';
+import { router } from '../router';
+import { logger } from '../utils/Logger';
+import Pop from '../utils/Pop';
 export default {
     setup() {
-        return {};
+        return {
+          async toProject(){
+            try {
+               router.push({name: 'ProjectPage'})
+            }
+            catch (error) {
+               logger.error(error)
+               Pop.toast(error.message, 'error')
+            }
+          },
+          async toHome(){
+            try {
+              router.push({name: 'BugPage'})
+            }
+            catch (error) {
+               logger.error(error)
+               Pop.toast(error.message, 'error')
+            }
+          }
+        };
     },
     components: { Bug }
 }
