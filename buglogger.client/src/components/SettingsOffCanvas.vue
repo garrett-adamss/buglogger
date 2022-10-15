@@ -1,17 +1,17 @@
 <template>
      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Hello, {{user.name}}</h5>
+        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Settings</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body small">
         <router-link :to="{name: 'Account'}">
-          <div class="list-group-item list-group-item-action hoverable" title="My Account" name="My Account">
+          <div class="list-group-item list-group-item-action hoverable pb-3" title="My Account" name="My Account">
             My Account
           </div>
         </router-link>
         <div
-          class="list-group-item list-group-item-action hoverable text-danger"
+          class="list-group-item list-group-item-action hoverable text-danger pb-3"
           @click="logout"
           title="Logout" name="Logout"
         >
@@ -43,9 +43,15 @@ export default {
  
 <style> 
 .offcanvas{
-    --bs-offcanvas-width: 310px!important;
+    --bs-offcanvas-width: 200px!important;
 }
 .hoverable {
   cursor: pointer;
 }
+.list-group-item {
+    font-size: 18px;
+}
+/* .btn-close{
+    display: none;
+} */
 </style>
