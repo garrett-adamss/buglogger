@@ -34,8 +34,8 @@ const routes = [
   },
   {
     path: '/',
-    name: 'ProjectPage',
-    component: loadPage('ProjectPage')
+    name: 'ProjectsPage',
+    component: loadPage('ProjectsPage')
   },
 ]
 

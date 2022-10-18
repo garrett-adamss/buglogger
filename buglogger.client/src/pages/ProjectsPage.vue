@@ -1,16 +1,16 @@
 <template>
- <div class="d-flex justify-content-center align-items-center">
     <h1>Project Page</h1>
- </div>
+    <Project/>
+
 </template>
  
 <script>
+import Project from '../components/Project.vue';
 export default {
-   setup(){
-      return {
- 
-      }
-   }
+    setup() {
+        return {};
+    },
+    components: { Project }
 }
 </script>
  

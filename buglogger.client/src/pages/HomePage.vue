@@ -22,7 +22,7 @@ export default {
         return {
           async toProject(){
             try {
-               router.push({name: 'ProjectPage'})
+               router.push({name: 'ProjectsPage'})
             }
             catch (error) {
                logger.error(error)
