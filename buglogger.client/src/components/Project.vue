@@ -1,8 +1,8 @@
 <template>
      <div class="project d-flex row rounded mb-1">
-    <div class="col-1 ms-3 selectable"><p class="project-desc">High</p></div>
+    <div class="col-1 ms-3 selectable"><p class="project-desc">pfp</p></div>
     <div class="col-2 offset-1 selectable"><p class="project-desc">Keepr</p></div>
-    <div class="col-2 selectable"><p class="project-desc">router-link</p></div>
+    <div class="col-2 selectable"><p class="project-desc">5</p></div>
     <div class="col-4"><p class="project-desc">user router-link from the vue card to the...</p></div>
     <div class="col-1"><p class="project-desc"><i class="mdi mdi-check-circle selectable"></i></p></div>
   </div>
