@@ -14,20 +14,25 @@
 
 <script>
 import Bug from '../components/Bug.vue';
+import { bugsService } from "../services/BugsService"
 import { router } from '../router';
 import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
+import { onMounted } from '@vue/runtime-core';
 export default {
     setup() {
       async function getAllBugs(){
         try {
-           await bugs
+           await bugsService.getAll()
         }
         catch (error) {
            logger.error(error)
            Pop.toast(error.message, 'error')
         }
       }
+      onMounted(() =>{
+        getAllBugs();
+      })
         return {
           async toProject(){
             try {
