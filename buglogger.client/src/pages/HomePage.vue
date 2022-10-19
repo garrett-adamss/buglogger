@@ -19,6 +19,15 @@ import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
 export default {
     setup() {
+      async function getAllBugs(){
+        try {
+           
+        }
+        catch (error) {
+           logger.error(error)
+           Pop.toast(error.message, 'error')
+        }
+      }
         return {
           async toProject(){
             try {
