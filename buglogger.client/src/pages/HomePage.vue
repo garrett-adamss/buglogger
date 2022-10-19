@@ -21,7 +21,7 @@ export default {
     setup() {
       async function getAllBugs(){
         try {
-           
+           await bugs
         }
         catch (error) {
            logger.error(error)
