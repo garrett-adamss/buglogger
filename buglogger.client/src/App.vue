@@ -7,7 +7,7 @@
     <SettingsOffCanvas/>
   </main>
   <footer>
-    <div class="text-center p-4">
+    <div class="text-center p-2 footer-text">
       Made by garrett-adamss 
     <a class="footer-source" href="https://github.com/garrett-adamss/portfolioLandingPage">
         &lt;source code/&gt;
@@ -39,6 +39,9 @@ a {
 
 a:hover {
   color: black;
+}
+.footer-text{
+  font-size: 16px;
 }
 footer a {
     transition: transform 250ms;
