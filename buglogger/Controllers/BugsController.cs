@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using buglogger.Models;
-
+// using CodeWorks.Auth0Provider;
 using buglogger.Services;
 // using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +38,7 @@ namespace buglogger.Controllers
         // {
         //     try 
         //     {
-        //         // Account user = await HttpContext.GetUserInfoAsync<Account>();
+        //         Account user = await HttpContext.GetUserInfoAsync<Account>();
         //         Bug bug = _bugsService.GetOne(id);
         //         return Ok(bug);
         //     }
