@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using buglogger.Models;
-using buglogger.Services;
-// using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using CodeWorks.Utils;
+using buglogger.Models;
+using buglogger.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace buglogger.Controllers
 {
