@@ -14,12 +14,16 @@ namespace buglogger.Services
             _bugsRepo = bugsRepo;
         }
 
+        internal Bug Create(Bug bugData, Account user)
+        {
+            return _bugsRepo.Create(bugData);
+        }
         internal List<Bug> GetAll()
         {
             return _bugsRepo.GetAll();
         }
 
-        internal Bug GetOne(int bugId)
+        internal Bug GetOne(int bugId, string userId)
         {
             Bug bug = _bugsRepo.GetOne(bugId);
             if (bug == null )
@@ -28,10 +32,30 @@ namespace buglogger.Services
             }
             return bug;
         }
-
-        internal string Delete(int id)
+        internal Bug Update(Bug newData, Account user)
         {
-            throw new NotImplementedException();
+            Bug original = GetOne(newData.Id, user.Id);
+            if (original.CreatorId != user.Id)
+            {
+                throw new Exception($"You are not the creator of {original.Name}");
+            }
+            original.Name = newData.Name ?? original.Name;
+            original.Description = newData.Description ?? original.Description;
+            original.Priority = newData.Priority ?? original.Priority;
+            original.Following = newData.Following ?? original.Following;
+
+            return _bugsRepo.Update(original);
         }
+        internal string Delete(int id, Account user)
+        {
+            Bug original = GetOne(id, user.Id);
+            if(original.CreatorId != user.Id)
+            {
+                throw new Exception($"Cannot delete {original.Name}");
+            }
+            _bugsRepo.Delete(id);
+            return $"{original.Name} was deleted";
+        }
+
     }
 }

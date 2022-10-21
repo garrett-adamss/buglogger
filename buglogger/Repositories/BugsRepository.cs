@@ -15,6 +15,20 @@ namespace buglogger.Repositories
             _db = db;
         }
 
+        internal Bug Create(Bug bugData)
+        {
+            string sql=@"
+            INSERT INTO bugs
+            (creatorId, name, description, priority)
+            VALUES
+            (@creatorId, @name, @description, @priority)
+            SELECT LAST_INSERT_ID();
+            ";
+            int id = _db.ExecuteScalar<int>(sql, bugData);
+            bugData.Id = id; 
+            return bugData;
+        }
+
         internal List<Bug> GetAll()
         {
             string sql = @"
@@ -47,6 +61,28 @@ namespace buglogger.Repositories
                 bug.Creator = profile;
                 return bug;
             }, new { bugId }).FirstOrDefault();
+        }
+
+        internal Bug Update(Bug newData)
+        {
+            string sql =@"
+            UPDATE bugs SET
+            name = @name,
+            description = @description,
+            priority = @priority,
+            following = @following
+            WHERE id = @id;
+            ";
+            _db.Execute(sql, newData);
+            return newData;
+        }
+
+        internal void Delete(int id)
+        {
+            string sql = @"
+            DELETE FROM bugs WHERE id = @id;
+            ";
+            _db.Execute(sql, new { id });
         }
     }
 }
