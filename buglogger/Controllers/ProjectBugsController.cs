@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using buglogger.Models;
 using buglogger.Services;
 using CodeWorks.Utils;
 using Microsoft.AspNetCore.Mvc;
@@ -32,18 +29,5 @@ namespace buglogger.Controllers
         //     }
         // }
 
-        [HttpGet]
-        public ActionResult<List<Project>> GetAll()
-        {
-            try 
-            {
-              List<Project> projects = _projectBugsService.GetAll();
-              return Ok(projects);
-            }
-            catch (Exception e)
-            {
-               return BadRequest(e.Message);
-            }
-        }
     }
 }
