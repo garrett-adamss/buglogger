@@ -37,7 +37,6 @@ namespace buglogger.Repositories
                 a.*
                 FROM bugs b
                 JOIN accounts a ON b.creatorId = a.id
-                GROUP BY (b.id)
             ";
             return _db.Query<Bug, Profile, Bug>(sql, (bug, profile) =>
             {
