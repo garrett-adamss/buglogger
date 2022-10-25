@@ -12,9 +12,25 @@
 </template>
  
 <script>
+import { onMounted } from '@vue/runtime-core';
 import Project from '../components/Project.vue';
+import { projectsService } from "../services/ProjectsService"
+import { logger } from '../utils/Logger';
+import Pop from '../utils/Pop';
 export default {
     setup() {
+      async function getAllProjects(){
+        try {
+           await projectsService.getAll()
+        }
+        catch (error) {
+           logger.error(error)
+           Pop.toast(error.message, 'error')
+        }
+      },
+      onMounted(()=>{
+        getAllProjects();
+      })
         return {};
     },
     components: { Project }
