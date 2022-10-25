@@ -5,8 +5,8 @@ import { api } from "./AxiosService"
 class BugsService{
     async getAll(){
         const res = await api.get('api/bugs')
-        // logger.log("[res.data getAll]", res.data)
-        // AppState.bugs = res.data
+        logger.log("[res.data getAll]", res.data)
+        AppState.bugs = res.data
         
     }
 }

@@ -2,21 +2,26 @@ using System;
 using System.Collections.Generic;
 using buglogger.Models;
 using buglogger.Services;
+using CodeWorks.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace buglogger.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class ProjectsController : ControllerBase
     {
         private readonly ProjectsService _projectsService;
         private readonly ProjectBugsService _projectsBugsService;
+        private readonly Auth0Provider _auth0Provider;
 
-        public ProjectsController(ProjectsService projectsService, ProjectBugsService projectsBugsService)
+        public ProjectsController(ProjectsService projectsService, ProjectBugsService projectsBugsService, Auth0Provider auth0Provider)
         {
             _projectsService = projectsService;
             _projectsBugsService = projectsBugsService;
+            _auth0Provider = auth0Provider;
         }
-        
+
         [HttpGet]
         public ActionResult<List<Project>> GetAll()
         {
