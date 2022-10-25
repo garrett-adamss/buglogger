@@ -27,7 +27,7 @@ export default {
            logger.error(error)
            Pop.toast(error.message, 'error')
         }
-      },
+      }
       onMounted(()=>{
         getAllProjects();
       })
