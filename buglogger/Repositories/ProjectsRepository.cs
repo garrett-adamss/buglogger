@@ -32,5 +32,21 @@ namespace buglogger.Repositories
             }).ToList();
         }
 
+        internal Project GetOne(int id)
+        {
+            string sql = @"
+                SELECT
+                p.*,
+                a.*
+                FROM project p
+                JOIN accounts a ON p.creatorId = a.id
+                WHERE p.id = @id
+            ";
+            return _db.Query<Project, Profile, Project>(sql, (project, profile)=>
+            {
+                project.Creator = profile; 
+                return project;
+            }, new { id }).FirstOrDefault();
+        }
     }
 }
