@@ -33,5 +33,18 @@ namespace buglogger.Services
         {
             return _projectsRepo.Create(projectData);
         }
+
+        internal Project Update(Project projectData, Account user)
+        {
+            Project original = GetOne(projectData.Id, user.Id);
+            if (original.CreatorId != user.Id)
+            {
+                throw new Exception($"You are not the owner of {original.Name}");
+            }
+            original.Name = projectData.Name ?? original.Name;
+            original.Description = projectData.Description ?? original.Description;
+
+            return _projectsRepo.Update(original);
+        }
     }
 }

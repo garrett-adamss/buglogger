@@ -62,5 +62,17 @@ namespace buglogger.Repositories
             projectData.Id = id;
             return projectData;
         }
+
+        internal Project Update(Project update)
+        {
+            string sql = @"
+            UPDATE projects SET
+            name = @name,
+            description = @description
+            WHERE id = @id;
+            ";
+            _db.Execute(sql, update);
+            return update;
+        }
     }
 }

@@ -70,5 +70,22 @@ namespace buglogger.Controllers
                return BadRequest(e.Message);
             }
         }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<ActionResult<Project>> Update(int id, [FromBody] Project projectData)
+        {
+            try 
+            {
+              Account user = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+              projectData.Id = id;
+              Project project = _projectsService.Update(projectData, user);
+              return Ok(project);
+            }
+            catch (Exception e)
+            {
+               return BadRequest(e.Message);
+            }
+        }
     }
 }
