@@ -74,5 +74,13 @@ namespace buglogger.Repositories
             _db.Execute(sql, update);
             return update;
         }
+
+        internal void Delete(int id)
+        {
+            string sql = @"
+            DELETE FROM projects WHERE id = @id;
+            ";
+            _db.Execute(sql, new { id });
+        }
     }
 }

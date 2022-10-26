@@ -46,5 +46,16 @@ namespace buglogger.Services
 
             return _projectsRepo.Update(original);
         }
+
+        internal string Delete(int id, Account user)
+        {
+            Project original = GetOne(id, user.Id);
+            if(original.CreatorId != user.Id)
+            {
+                throw new Exception($"Cannot delete {original.Name}, this is not your project");
+            }
+            _projectsRepo.Delete(id);
+            return $"{original.Name} was deleted.";
+        }
     }
 }
