@@ -28,5 +28,10 @@ namespace buglogger.Services
             }
             return project;
         }
+
+        internal Project Create(Project projectData, Account user)
+        {
+            return _projectsRepo.Create(projectData);
+        }
     }
 }

@@ -48,5 +48,19 @@ namespace buglogger.Repositories
                 return project;
             }, new { id }).FirstOrDefault();
         }
+
+        internal Project Create(Project projectData)
+        {
+            string sql = @"
+            INSERT INTO projects
+            (creatorId, name, description)
+            VALUES
+            (@creatorId, @name, @description);
+            SELECT LAST_INSERT_ID();
+            ";
+            int id = _db.ExecuteScalar<int>(sql, projectData);
+            projectData.Id = id;
+            return projectData;
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using buglogger.Models;
 using buglogger.Services;
 using CodeWorks.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace buglogger.Controllers
@@ -44,6 +45,24 @@ namespace buglogger.Controllers
             {
               Account user = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
               Project project = _projectsService.GetOne(id, user?.Id);
+              return Ok(project);
+            }
+            catch (Exception e)
+            {
+               return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult<Project>> Create([FromBody] Project projectData)
+        {
+            try 
+            {
+              Account user = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+              projectData.CreatorId = user.Id;
+              Project project = _projectsService.Create(projectData, user);
+              project.Creator = user;
               return Ok(project);
             }
             catch (Exception e)
