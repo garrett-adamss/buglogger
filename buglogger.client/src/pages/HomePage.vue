@@ -43,7 +43,7 @@ export default {
                Pop.toast(error.message, 'error')
             }
           },
-          async toHome(){
+          async toBug(){
             try {
               router.push({name: 'BugPage'})
             }
