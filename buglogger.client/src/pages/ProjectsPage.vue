@@ -4,7 +4,7 @@
     <div class="d-flex row align-items-center project-title">
         <div class="col-1 ms-3"><p class="project-subtitle user-select-none">User</p></div>
         <div class="col-2 offset-1 selectable" @click="toProject()"><p class="project-subtitle">Project</p></div>
-        <div class="col-2 selectable" @click="toBug()"><p class="project-subtitle">Bug Count</p></div>
+        <div class="col-2" @click="toBug()"><p class="project-subtitle">Bug Count</p></div>
         <div class="col-4"><p class="project-subtitle user-select-none">Description</p></div>
         <div class="col-1"><p class="project-subtitle user-select-none">Status</p></div>
     </div>
