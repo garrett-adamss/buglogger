@@ -49,6 +49,7 @@ export default {
  
 <style> 
 .bug{
+    background: rgba(175, 175, 175, 0.539);
     margin-left: .5px;
     margin-right: 1px;
     border-top: 2px solid rgb(176, 176, 176);

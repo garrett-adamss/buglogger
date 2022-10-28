@@ -20,7 +20,7 @@ export default {
  
 <style> 
 .project{
-    background-color: aqua;
+    background-color: rgba(33, 153, 200, 0.416);
     margin-left: .5px;
     margin-right: 1px;
     border-top: 2px solid rgb(88, 186, 32);
