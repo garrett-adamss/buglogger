@@ -51,7 +51,7 @@ export default {
 .list-group-item {
     font-size: 18px;
 }
-.btn-close{
+/* .btn-close{
     display: none;
-}
+} */
 </style>
