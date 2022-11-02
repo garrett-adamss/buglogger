@@ -18,12 +18,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <li>
-          Bugs
-        </li>
-        <li>
-          Projects
-        </li>
+        <router-link :to="{ name: 'BugPage' }">
+          <li class="p-3">
+           Bugs
+          </li>
+        </router-link>
+        <router-link :to="{ name: 'ProjectsPage' }">
+          <li class="p-3">
+           Projects
+          </li>
+        </router-link>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
       <Login />
@@ -51,7 +55,7 @@ a:hover {
 }
 
 .navbar-nav .router-link-exact-active {
-  border-bottom: 2px solid var(--bs-success);
+  border-bottom: 2px solid blueviolet;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
