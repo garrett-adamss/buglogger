@@ -5,23 +5,26 @@
       <div class="col-3 selection-box text-center rounded">
         <div class="text-box">
           <h3>Add new bug</h3>
-          <i class="mdi mdi-plus" @click="createBug()"></i>
+          <i class="mdi mdi-plus" type="button" data-bs-toggle="modal" data-bs-target="#NewBugModal"></i>
         </div>
       </div>
       <div class="col-3 selection-box text-center rounded">
         <div class="text-box">
           <h3>Add new project</h3>  
-          <i class="mdi mdi-plus" @click="createProject"></i>
+          <i class="mdi mdi-plus" type="button" data-bs-toggle="modal" data-bs-target="#NewProjectModal"></i>
         </div>
       </div>
       <div class="col-3 selection-box text-center rounded">
         <div class="text-box">
           <h3>Continue to bugs</h3>
-          <i class="mdi mdiArrowRight" @click="toBugPage()">>></i>
+          <i class="mdi mdiArrowRight" type="button" @click="toBugPage()">>></i>
         </div>
       </div>
     </div>
   </div>
+  <NewProjectModal/>
+  <NewBugModal/>
+  
 </template>
 
 <script>
@@ -63,7 +66,7 @@ i{
 }
 .mdi:hover{
   cursor: pointer;
-  transform: translateX(-5px);
+  transform: translateY(-4px);
 }
 .title{
   margin-top: 5vh;
