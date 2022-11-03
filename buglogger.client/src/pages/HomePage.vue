@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <h1 class="text-center">Welcome to bugLogger</h1>
+    <h1 class="text-center title">Welcome to bugLogger</h1>
     <div class="row justify-content-around">
       <div class="col-3 selection-box text-center rounded">
         <div class="text-box">
@@ -65,7 +65,10 @@ i{
   cursor: pointer;
   transform: translateX(-5px);
 }
+.title{
+  margin-top: 5vh;
+}
 .row{
-  margin-top: 18vh;
+  margin-top: 10vh;
 }
 </style>
