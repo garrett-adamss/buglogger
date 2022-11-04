@@ -31,7 +31,7 @@ export default {
         }
       }
       onMounted(() =>{
-        // getAllBugs();
+        getAllBugs();
       })
         return {
           async toProject(){
