@@ -7,7 +7,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        New Bug Modal
+        <div class="mb-3">
+          <input type="text" name="" id="" class="form-control" placeholder="Name" aria-describedby="helpId">
+          <!-- <small id="helpId" class="text-muted">Help text</small> -->
+          <input type="text" name="" id="" class="form-control" placeholder="Project" aria-describedby="helpId">
+          <small id="helpId" class="text-muted">Select project this bug belongs to</small>
+          
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
