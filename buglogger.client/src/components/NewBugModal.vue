@@ -11,7 +11,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" @click="createBug()" title="Create Modal">Save changes</button>
       </div>
     </div>
   </div>
@@ -19,10 +19,20 @@
 </template>
  
 <script>
+import { logger } from '../utils/Logger'
+import Pop from '../utils/Pop'
 export default {
    setup(){
       return {
- 
+        async createBug(){
+          try {
+             
+          }
+          catch (error) {
+             logger.error(error)
+             Pop.toast(error.message, 'error')
+          }
+        }
       }
    }
 }

@@ -4,14 +4,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close Modal"></button>
       </div>
       <div class="modal-body">
         New Project Modal
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" @click="createProject()">Create Project</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Close Modal">Cancel</button>
+        <button type="button" class="btn btn-primary" @click="createProject()" title="Create Project">Create Project</button>
       </div>
     </div>
   </div>
