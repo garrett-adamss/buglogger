@@ -8,8 +8,9 @@
     <div class="col-4"><p class="subtitle user-select-none">Description</p></div>
     <div class="col-1"><p class="subtitle user-select-none">Status</p></div>
   </div>
-  <Bug/>
-
+  <div v-for="b in bugs" :key="b.id">
+    <Bug :bugs="b"/>
+  </div>
 </template>
  
 <script>
@@ -18,7 +19,8 @@ import { bugsService } from "../services/BugsService"
 import { router } from '../router';
 import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
-import { onMounted } from '@vue/runtime-core';
+import { computed, onMounted } from '@vue/runtime-core';
+import { AppState } from '../AppState';
 export default {
     setup() {
       async function getAllBugs(){
@@ -34,6 +36,7 @@ export default {
         getAllBugs();
       })
         return {
+          bugs: computed(() => AppState.bugs),
           async toProject(){
             try {
                router.push({name: 'ProjectsPage'})

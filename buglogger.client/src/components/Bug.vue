@@ -1,8 +1,8 @@
 <template>
      <!-- align-items-center -->
    <div class="bug d-flex row rounded mb-1">
-    <div class="col-1 ms-3 selectable"><p class="bug-desc">High</p></div>
-    <div class="col-2 offset-1 selectable"><p class="bug-desc">Keepr</p></div>
+    <div class="col-1 ms-3 selectable"><p class="bug-desc">pri</p></div>
+    <div class="col-2 offset-1 selectable"><p class="bug-desc">{{bug.name}}</p></div>
     <div class="col-2 selectable"><p class="bug-desc">router-link</p></div>
     <div class="col-4"><p class="bug-desc">user router-link from the vue card to the...</p></div>
     <div class="col-1"><p class="bug-desc"><i class="mdi mdi-check-circle selectable"></i></p></div>
@@ -38,9 +38,18 @@
 </template>
  
 <script>
+import { computed } from '@vue/reactivity';
+import { AppState } from '../AppState'
 export default {
-   setup(){
+  props: {
+    bug: {
+      type: Object,
+      required: true
+    }
+  },
+   setup(props){
       return {
+        bug: computed(() => AppState.bugs),
  
       }
    }

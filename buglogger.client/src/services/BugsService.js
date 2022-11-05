@@ -7,7 +7,6 @@ class BugsService{
         const res = await api.get('api/bugs')
         logger.log("[res.data getAll]", res.data)
         AppState.bugs = res.data
-        
     }
 }
 export const bugsService = new BugsService()
