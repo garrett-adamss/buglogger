@@ -9,7 +9,7 @@
     <div class="col-1"><p class="subtitle user-select-none">Status</p></div>
   </div>
   <div v-for="b in bugs" :key="b.id">
-    <Bug :bugs="b"/>
+    <Bug :bug="b"/>
   </div>
 </template>
  

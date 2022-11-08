@@ -1,10 +1,10 @@
 <template>
      <!-- align-items-center -->
    <div class="bug d-flex row rounded mb-1 selectable" @click="setActiveBug()">
-    <div class="col-1 ms-3"><p class="bug-desc">pri</p></div>
-    <div class="col-2 offset-1"><p class="bug-desc">{{bug.name}}</p></div>
+    <div class="col-1 ms-3"><p class="bug-desc">{{ bug.priority }}</p></div>
+    <div class="col-2 offset-1"><p class="bug-desc">{{ bug.project }} test</p></div>
     <div class="col-2"><p class="bug-desc">router-link</p></div>
-    <div class="col-4"><p class="bug-desc">user router-link from the vue card to the...</p></div>
+    <div class="col-4"><p class="bug-desc">{{ bug.description }}</p></div>
     <div class="col-1"><p class="bug-desc"><i class="mdi mdi-check-circle"></i></p></div>
   </div>
   <!-- <div class="bug d-flex row rounded mb-1">
@@ -44,15 +44,15 @@ import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
 import { bugsService } from '../services/BugsService';
 export default {
-  // props: {
-  //   bug: {
-  //     type: Object,
-  //     required: true
-  //   },
-  // },
-   setup(){
+  props: {
+    bug: {
+      type: Object,
+      required: true
+    },
+  },
+   setup(props){
       return {
-        bug: computed(() => AppState.bugs),
+        // bug: computed(() => AppState.bugs),
         async setActiveBug(){
           try {
              await bugsService.getOne(props.bug.id)
