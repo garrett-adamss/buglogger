@@ -8,15 +8,19 @@
         <div class="col-4"><p class="project-subtitle user-select-none">Description</p></div>
         <div class="col-1"><p class="project-subtitle user-select-none">Status</p></div>
     </div>
-    <Project/>
+    <div v-for="p in projects" :key="p.id">
+      <Project :project="p"/>
+    </div>
 </template>
- 
+ `1`
 <script>
+import { computed } from '@vue/reactivity';
 import { onMounted } from '@vue/runtime-core';
 import Project from '../components/Project.vue';
 import { projectsService } from "../services/ProjectsService"
 import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
+import { AppState } from '../AppState';
 export default {
     setup() {
       async function getAllProjects(){
@@ -31,7 +35,9 @@ export default {
       onMounted(()=>{
         getAllProjects();
       })
-        return {};
+        return {
+          projects: computed(() => AppState.projects),
+        };
     },
     components: { Project }
 }

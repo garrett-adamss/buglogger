@@ -44,13 +44,13 @@ import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
 import { bugsService } from '../services/BugsService';
 export default {
-  props: {
-    bug: {
-      type: Object,
-      required: true
-    }
-  },
-   setup(props){
+  // props: {
+  //   bug: {
+  //     type: Object,
+  //     required: true
+  //   },
+  // },
+   setup(){
       return {
         bug: computed(() => AppState.bugs),
         async setActiveBug(){
