@@ -9,10 +9,27 @@
 </template>
  
 <script>
+import { projectsService } from '../services/ProjectsService'
+import { logger } from '../utils/Logger'
+import Pop from '../utils/Pop'
 export default {
-   setup(){
+    props:{ 
+        project: {
+            type: Object,
+            required: true
+        },
+    },
+   setup(props){
       return {
- 
+        async setActive(){
+            try {
+               await projectsService.getOne(props.project.id);
+            }
+            catch (error) {
+               logger.error(error)
+               Pop.toast(error.message, 'error')
+            }
+        }
       }
    }
 }

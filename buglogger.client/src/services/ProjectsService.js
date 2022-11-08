@@ -8,6 +8,12 @@ class ProjectsService{
         logger.log("res.data", res.data)
         AppState.projects = res.data
     }
+    async getOne(id){
+        const res = await api.get(`api/projects/${id}`)
+        AppState.activeProject = res.data
+        logger.log("[Active Project]", AppState.activeProject)
+
+    }
 }
 
 export const projectsService = new ProjectsService
