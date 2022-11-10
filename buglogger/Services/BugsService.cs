@@ -23,9 +23,9 @@ namespace buglogger.Services
             return _bugsRepo.GetAll();
         }
 
-        internal Bug GetOne(int bugId, string userId)
+        internal Bug GetOne(int id, string userId)
         {
-            Bug bug = _bugsRepo.GetOne(bugId);
+            Bug bug = _bugsRepo.GetOne(id);
             if (bug == null )
             {
                 throw new Exception("no bug by that id");

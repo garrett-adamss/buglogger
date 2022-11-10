@@ -53,7 +53,7 @@ namespace buglogger.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Bug>> GetOneAsync(int id)
+        public async Task<ActionResult<Bug>> GetOne(int id)
         {
             try 
             {

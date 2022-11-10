@@ -46,7 +46,7 @@ namespace buglogger.Repositories
             }).ToList();
         }
 
-        internal Bug GetOne(int bugId)
+        internal Bug GetOne(int id)
         {
             string sql = @"
                 SELECT
@@ -60,7 +60,7 @@ namespace buglogger.Repositories
             {
                 bug.Creator = profile;
                 return bug;
-            }, new { bugId }).FirstOrDefault();
+            }, new { id }).FirstOrDefault();
         }
 
         internal Bug Update(Bug newData)
