@@ -38,7 +38,7 @@ namespace buglogger.Repositories
                 SELECT
                 p.*,
                 a.*
-                FROM project p
+                FROM projects p
                 JOIN accounts a ON p.creatorId = a.id
                 WHERE p.id = @id
             ";
