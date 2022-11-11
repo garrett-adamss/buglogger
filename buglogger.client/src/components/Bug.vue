@@ -1,6 +1,7 @@
 <template>
      <!-- align-items-center -->
-   <div class="bug d-flex row rounded mb-1 selectable" @click="setActiveBug()">
+<router-link :to="{name: 'ActiveBugPage', params: {id:bug.id}}">
+  <div class="bug d-flex row rounded mb-1 selectable" @click="setActiveBug()">
     <div class="col-1 ms-3"><p class="bug-desc">{{ bug.priority }}</p></div>
     <div class="col-2 offset-1"><p class="bug-desc">Project</p></div>
     <div class="col-2"><p class="bug-desc">{{ bug.name }}</p></div>
@@ -8,6 +9,7 @@
     <div v-if="bug.following == 1 " class="col-1"><p class="bug-desc ms-4"><i class="mdi mdi-check-circle"></i></p></div>
     <div v-else class="col-1"><p class="bug-desc ms-4"><i class="mdi mdi-close-outline"></i></p></div>
   </div>
+</router-link>
   <!-- <div class="bug d-flex row rounded mb-1">
     <div class="col-1 ms-3"><p class="bug-desc">Medium</p></div>
     <div class="col-2 offset-1"><p class="bug-desc">Buglogger</p></div>

@@ -37,6 +37,11 @@ const routes = [
     name: 'ProjectsPage',
     component: loadPage('ProjectsPage')
   },
+  {
+    path: '/',
+    name: 'ActiveBugPage',
+    component: loadPage('ActiveBugPage')
+  },
 ]
 
 export const router = createRouter({
