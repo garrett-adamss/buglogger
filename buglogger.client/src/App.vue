@@ -1,10 +1,16 @@
 <template>
   <header>
-    <Navbar />
   </header>
-  <main>
-    <router-view />
-    <SettingsOffCanvas/>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-1">
+        <Navbar/>
+      </div>
+      <div class="col-11">
+        <router-view />
+      </div>
+      <SettingsOffCanvas/>
+    </div>
   </main>
   <footer>
     <div class="text-center p-2 footer-text">

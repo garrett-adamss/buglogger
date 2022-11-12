@@ -1,38 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg px-3">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
-      </div>
-    </router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
-        <router-link :to="{ name: 'BugPage' }">
-          <li class="p-3">
-           Bugs
-          </li>
-        </router-link>
-        <router-link :to="{ name: 'ProjectsPage' }">
-          <li class="p-3">
-           Projects
-          </li>
-        </router-link>
-      </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <Login />
-    </div>
-  </nav>
+<nav>
+  <div class="flex-column">
+    test
+  </div>
+</nav>
+<div class="d-flex flex-column align-items-center">
+  <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
+</div>
+<Login />
 </template>
 
 <script>
