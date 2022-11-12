@@ -1,13 +1,20 @@
 <template>
-<nav>
-  <div class="flex-column">
-    test
+<nav class="flex-column">
+  <div>
+    <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
   </div>
+  <router-link class="navbar-brand" :to="{ name: 'BugPage' }">
+    Bugs
+  </router-link>
+  <router-link class="navbar-brand" :to="{ name: 'BugPage' }">
+    Projects
+  </router-link>
+  <router-link class="navbar-brand" :to="{ name: 'BugPage' }">
+    Bugs
+  </router-link>
+  <Login />
 </nav>
-<div class="d-flex flex-column align-items-center">
-  <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
-</div>
-<Login />
+
 </template>
 
 <script>
