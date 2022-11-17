@@ -3,13 +3,13 @@
   <div class="text-center">
     <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
   </div>
-  <router-link class="navbar-brand col-8" :to="{ name: 'BugPage' }">
+  <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'BugPage' }">
    <p class="selectable">Bugs</p> 
   </router-link>
-  <router-link class="navbar-brand col-8" :to="{ name: 'ProjectsPage' }">
+  <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'ProjectsPage' }">
     <p class="selectable">Projects</p>
   </router-link>
-  <router-link class="navbar-brand col-8" :to="{ name: 'BugPage' }">
+  <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'BugPage' }">
     <p class="selectable">Bugs</p>
   </router-link>
   <Login />
@@ -45,10 +45,13 @@ a:hover {
 .navbar-brand{
   max-height: 2vh;
 }
-
+p{
+  font-size: 20px;
+  font-weight: 500;
+}
 .nav{ 
   width: 8vw;
-  height: 90vh;
+  height: 93vh;
   /* border-right: 2px solid rgb(0, 0, 0); */
   background-color: rgb(255, 255, 255);
 }

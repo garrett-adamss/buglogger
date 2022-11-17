@@ -14,9 +14,9 @@
     </div>
   </main>
   <footer>
-    <div class="text-center p-2 footer-text position">
+    <div class="text-center p-2 footer-text">
       Made by garrett-adamss 
-    <a class="footer-source" href="https://github.com/garrett-adamss/portfolioLandingPage">
+    <a class="footer-source" href="https://github.com/garrett-adamss/buglogger">
         &lt;source code/&gt;
     </a>
     </div>
@@ -48,6 +48,8 @@ a:hover {
   color: black;
 }
 .footer-text{
+  position: relative;
+  bottom: 50px;
   font-size: 16px;
 }
 
@@ -62,7 +64,13 @@ footer a {
   }
 
 header{
-  height:8vh;
+  height:7vh;
   background-color: white;
 }
+footer{
+  position: relative;
+  max-height: 0px;
+}
+
+
 </style>
