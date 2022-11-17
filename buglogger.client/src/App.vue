@@ -1,5 +1,6 @@
 <template>
   <header>
+
   </header>
   <main class="container-fluid">
     <div class="row">
@@ -13,7 +14,7 @@
     </div>
   </main>
   <footer>
-    <div class="text-center p-2 footer-text">
+    <div class="text-center p-2 footer-text position">
       Made by garrett-adamss 
     <a class="footer-source" href="https://github.com/garrett-adamss/portfolioLandingPage">
         &lt;source code/&gt;
@@ -60,5 +61,8 @@ footer a {
     transform: translateY(-10px);
   }
 
-
+header{
+  height:8vh;
+  background-color: white;
+}
 </style>
