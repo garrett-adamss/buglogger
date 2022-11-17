@@ -1,12 +1,12 @@
 <template>
   <span class="navbar-text">
-    <button
-      class="btn selectable lighten-30 text-uppercase my-2 my-lg-0"
+    <div
+      class="selectable lighten-30 text-uppercase my-2 my-lg-0"
       @click="login"
       v-if="!user.isAuthenticated"
     >
       Login
-    </button>
+    </div>
 
     <div class="my-2 my-lg-0" v-else>
         <i class="settings mdi mdi-cog-outline" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>

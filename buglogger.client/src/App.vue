@@ -49,6 +49,7 @@ a:hover {
 .footer-text{
   font-size: 16px;
 }
+
 footer a {
     transition: transform 250ms;
   }
@@ -58,4 +59,6 @@ footer a {
     color: white;
     transform: translateY(-10px);
   }
+
+
 </style>
