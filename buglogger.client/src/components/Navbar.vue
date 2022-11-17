@@ -1,6 +1,6 @@
 <template>
 <nav class="row nav">
-  <div >
+  <div class="text-center">
     <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
   </div>
   <router-link class="navbar-brand col-8" :to="{ name: 'BugPage' }">
@@ -42,10 +42,14 @@ a:hover {
   border-bottom-right-radius: 0;
 }
 
+.navbar-brand{
+  max-height: 2vh;
+}
 
 .nav{ 
-  height: 100vh;
-  border-right: 2px solid rgb(0, 0, 0);
-  background-color: rgba(64, 64, 64, 0.459);
+  width: 8vw;
+  height: 90vh;
+  /* border-right: 2px solid rgb(0, 0, 0); */
+  background-color: rgb(255, 255, 255);
 }
 </style>
