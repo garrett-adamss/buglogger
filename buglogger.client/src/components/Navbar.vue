@@ -42,7 +42,6 @@ a:hover {
   border-bottom-right-radius: 0;
 }
 
-.
 
 .nav{ 
   height: 100vh;
