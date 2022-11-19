@@ -12,7 +12,9 @@
   <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'BugPage' }">
     <p class="">Bugs</p>
   </router-link>
-  <Login />
+  <div class="ms-4">
+    <Login />
+  </div>
 </nav>
 
 </template>
