@@ -4,13 +4,13 @@
     <img alt="logo" src="https://logoeps.com/wp-content/uploads/2014/04/3886-b-logo-square-icon-vector-icon-vector-eps.png" height="45" />
   </div>
   <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'BugPage' }">
-   <p class="selectable">Bugs</p> 
+   <p class="">Bugs</p> 
   </router-link>
   <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'ProjectsPage' }">
-    <p class="selectable">Projects</p>
+    <p class="">Projects</p>
   </router-link>
   <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'BugPage' }">
-    <p class="selectable">Bugs</p>
+    <p class="">Bugs</p>
   </router-link>
   <Login />
 </nav>
