@@ -6,7 +6,7 @@
     <div class="col-4"><p class="subtitle user-select-none">Description</p></div>
     <div class="col-1"><p class="subtitle user-select-none">Following</p></div>
   </div>
-  <div class="top-line">
+  <div class="top-line mb-1">
   </div>
   <div v-for="b in bugs" :key="b.id">
     <Bug :bug="b"/>

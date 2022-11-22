@@ -6,7 +6,7 @@
     <div class="col-4"><p class="project-subtitle user-select-none">Description</p></div>
     <div class="col-1"><p class="project-subtitle user-select-none">Status</p></div>
   </div>
-  <div class="top-line">
+  <div class="top-line mb-1">
   </div>
   <div v-for="p in projects" :key="p.id">
       <Project :project="p"/>

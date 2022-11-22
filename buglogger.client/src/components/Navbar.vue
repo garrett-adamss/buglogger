@@ -10,7 +10,7 @@
     <p class="">Projects</p>
   </router-link>
   <router-link class="navbar-brand col-8 ms-3" :to="{ name: 'BugPage' }">
-    <p class="">Bugs</p>
+    <p class="">Add</p>
   </router-link>
   <div class="ms-4">
     <Login />
