@@ -1,12 +1,12 @@
 <template>
-  <div class="top-line">
-  </div>
   <div class="d-flex row align-items-center title">
     <div class="col-1 ms-3"><p class="subtitle user-select-none">Priority</p></div>
-    <div class="col-2 offset-1 selectable" @click="toProject()"><p class="subtitle">Project</p></div>
-    <div class="col-2 selectable" @click="toBug()"><p class="subtitle">Bug</p></div>
+    <div class="col-2 offset-1"><p class="subtitle">Project</p></div>
+    <div class="col-2"><p class="subtitle">Bug</p></div>
     <div class="col-4"><p class="subtitle user-select-none">Description</p></div>
     <div class="col-1"><p class="subtitle user-select-none">Following</p></div>
+  </div>
+  <div class="top-line">
   </div>
   <div v-for="b in bugs" :key="b.id">
     <Bug :bug="b"/>
